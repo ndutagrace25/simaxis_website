@@ -88,13 +88,13 @@ const Contact = () => {
               <div className="flex items-center space-x-4">
                 <Mail className="w-6 h-6 text-primary-600" />
                 <span className="text-gray-700 font-medium">
-                  info@si-maxis.com
+                  info@simaxis.co.ke, simaxismeter@gmail.com
                 </span>
               </div>
               <div className="flex items-center space-x-4">
                 <Phone className="w-6 h-6 text-primary-600" />
                 <span className="text-gray-700 font-medium">
-                  +254 700 000 000
+                  +254722164408, +254721863405, +254732863405
                 </span>
               </div>
               <div className="flex items-center space-x-4">
