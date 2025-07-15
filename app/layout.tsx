@@ -13,6 +13,11 @@ export const metadata: Metadata = {
     "electricity tokens, token meters, water meters, paybill 444440, SMS tokens, smart meters",
   authors: [{ name: "SI-MAXIS" }],
   robots: "index, follow",
+  icons: {
+    icon: "/assets/logo.ico",
+    shortcut: "/assets/logo.ico",
+    apple: "/assets/logo.ico",
+  },
   openGraph: {
     title: "SI-MAXIS - Smart Electricity & Water Token Solutions",
     description:

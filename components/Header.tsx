@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { Menu, X, Zap, Droplets } from "lucide-react";
+import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
+import Image from "next/image";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -38,11 +39,17 @@ const Header = () => {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-2"
           >
-            <div className="flex items-center space-x-2">
-              <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-                <Zap className="w-6 h-6 text-white" />
-              </div>
-              <span className="text-2xl font-bold gradient-text">SI-MAXIS</span>
+            <div className="flex items-center space-x-3">
+              <Image
+                src="/assets/logo.png"
+                alt="SI-MAXIS Logo"
+                width={48}
+                height={48}
+                className="w-12 h-12 object-cover rounded-full"
+              />
+              <span className="text-2xl font-bold text-[#2cc0ce] text-shadow-lg">
+                SI-MAXIS
+              </span>
             </div>
           </motion.div>
 

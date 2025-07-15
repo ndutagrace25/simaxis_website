@@ -1,4 +1,4 @@
-import { Zap } from "lucide-react";
+import Image from "next/image";
 
 const Footer = () => {
   return (
@@ -6,10 +6,16 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Logo and Copyright */}
         <div className="flex items-center space-x-3 mb-4 md:mb-0">
-          <div className="w-10 h-10 bg-gradient-to-r from-primary-600 to-secondary-600 rounded-lg flex items-center justify-center">
-            <Zap className="w-6 h-6 text-white" />
-          </div>
-          <span className="text-xl font-bold gradient-text">SI-MAXIS</span>
+          <Image
+            src="/assets/logo.png"
+            alt="SI-MAXIS Logo"
+            width={48}
+            height={48}
+            className="w-12 h-12 object-cover rounded-full"
+          />
+          <span className="text-xl font-bold text-[#2cc0ce] text-shadow-lg">
+            SI-MAXIS
+          </span>
         </div>
         <div className="flex flex-col md:flex-row md:items-center gap-4 md:gap-8">
           <a href="#home" className="hover:text-primary-400 transition">
