@@ -16,6 +16,7 @@ Message: ${message}`;
       "+254722164408",
       "+254721863405",
       "+254732863405",
+      "+254703959872",
     ];
     let successCount = 0;
     let errorMessages = [];
