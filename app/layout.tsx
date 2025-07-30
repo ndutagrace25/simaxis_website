@@ -8,9 +8,9 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://si-maxis.com"),
   title: "SI-MAXIS - Smart Electricity & Water Token Solutions",
   description:
-    "Leading provider of electricity tokens, token meters, and water meters. Buy tokens via paybill 444440 with instant SMS delivery.",
+    "Leading provider of electricity tokens, token meters, and water meters. Buy tokens via paybill 4444400 with instant SMS delivery.",
   keywords:
-    "electricity tokens, token meters, water meters, paybill 444440, SMS tokens, smart meters",
+    "electricity tokens, token meters, water meters, paybill 4444400, SMS tokens, smart meters",
   authors: [{ name: "SI-MAXIS" }],
   robots: "index, follow",
   icons: {
@@ -21,7 +21,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "SI-MAXIS - Smart Electricity & Water Token Solutions",
     description:
-      "Leading provider of electricity tokens, token meters, and water meters. Buy tokens via paybill 444440 with instant SMS delivery.",
+      "Leading provider of electricity tokens, token meters, and water meters. Buy tokens via paybill 4444400 with instant SMS delivery.",
     type: "website",
     locale: "en_US",
     url: "https://si-maxis.com",

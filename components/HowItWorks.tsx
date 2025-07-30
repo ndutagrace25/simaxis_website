@@ -23,9 +23,9 @@ const HowItWorks = () => {
     {
       icon: CreditCard,
       title: "2. Enter Paybill",
-      description: "Enter paybill number: 444440",
+      description: "Enter paybill number: 4444400",
       details:
-        "Use our dedicated paybill number 444440 for all SI-MAXIS token purchases.",
+        "Use our dedicated paybill number 4444400 for all SI-MAXIS token purchases.",
     },
     {
       icon: MessageSquare,

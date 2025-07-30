@@ -1,6 +1,6 @@
 # SI-MAXIS Website
 
-A modern, eye-catching marketing website for SI-MAXIS, a leading provider of electricity tokens, token meters, and water meters. Customers can buy tokens via paybill 444440 and receive them instantly via SMS.
+A modern, eye-catching marketing website for SI-MAXIS, a leading provider of electricity tokens, token meters, and water meters. Customers can buy tokens via paybill 4444400 and receive them instantly via SMS.
 
 ## Features
 
@@ -48,4 +48,5 @@ Update content in the components and sections to match SI-MAXIS branding and off
 ---
 
 © 2024 SI-MAXIS. All rights reserved.
+
 # simaxis_website

@@ -16,7 +16,7 @@ const Services = () => {
       icon: Zap,
       title: "Electricity Tokens",
       description:
-        "Purchase electricity tokens instantly via paybill 444440. Receive tokens via SMS within seconds.",
+        "Purchase electricity tokens instantly via paybill 4444400. Receive tokens via SMS within seconds.",
       features: [
         "Instant SMS delivery",
         "24/7 availability",
