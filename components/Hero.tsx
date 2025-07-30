@@ -77,7 +77,7 @@ const Hero = () => {
             >
               Experience seamless electricity and water token purchases. Buy
               tokens via paybill{" "}
-              <span className="font-bold text-yellow-300">444440</span> and
+              <span className="font-bold text-yellow-300">4444400</span> and
               receive them instantly via SMS.
             </motion.p>
 
@@ -153,7 +153,7 @@ const Hero = () => {
                         Paybill Number
                       </p>
                       <p className="text-white font-bold text-base sm:text-lg">
-                        444440
+                        4444400
                       </p>
                     </div>
                     <div className="bg-white/10 rounded-lg p-3 sm:p-4">
