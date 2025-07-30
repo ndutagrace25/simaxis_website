@@ -2,8 +2,82 @@
 
 import { motion } from "framer-motion";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import { useState } from "react";
+import Swal from "sweetalert2";
 
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    try {
+      // Send SMS via our local API route
+      const response = await fetch("/api/send-sms", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        }),
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        // Show success message
+        await Swal.fire({
+          title: "Message Sent Successfully!",
+          text: "Thank you for contacting SI-MAXIS. We will get back to you soon.",
+          icon: "success",
+          confirmButtonText: "OK",
+          confirmButtonColor: "#3b82f6",
+        });
+
+        // Reset form
+        setFormData({
+          name: "",
+          email: "",
+          message: "",
+        });
+      } else {
+        throw new Error(data.message);
+      }
+    } catch (error: any) {
+      console.error("Error sending message:", error);
+
+      // Show error message
+      await Swal.fire({
+        title: "Error Sending Message",
+        text: `Sorry, there was an error sending your message. Error: ${error.message}`,
+        icon: "error",
+        confirmButtonText: "OK",
+        confirmButtonColor: "#ef4444",
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,10 +106,7 @@ const Contact = () => {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
             className="bg-gray-50 rounded-2xl shadow-lg p-8 space-y-6"
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Thank you for contacting SI-MAXIS!");
-            }}
+            onSubmit={handleSubmit}
           >
             <div>
               <label className="block text-gray-700 font-semibold mb-2">
@@ -43,8 +114,12 @@ const Contact = () => {
               </label>
               <input
                 type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                placeholder="Enter your name"
               />
             </div>
             <div>
@@ -53,8 +128,12 @@ const Contact = () => {
               </label>
               <input
                 type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleInputChange}
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                placeholder="Enter your email"
               />
             </div>
             <div>
@@ -62,17 +141,31 @@ const Contact = () => {
                 Message
               </label>
               <textarea
+                name="message"
+                value={formData.message}
+                onChange={handleInputChange}
                 required
                 rows={5}
                 className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                placeholder="Enter your message"
               ></textarea>
             </div>
             <button
               type="submit"
-              className="btn-primary flex items-center justify-center"
+              disabled={isSubmitting}
+              className="btn-primary flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed"
             >
-              <Send className="w-5 h-5 mr-2" />
-              Send Message
+              {isSubmitting ? (
+                <>
+                  <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white mr-2"></div>
+                  Sending...
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5 mr-2" />
+                  Send Message
+                </>
+              )}
             </button>
           </motion.form>
 
