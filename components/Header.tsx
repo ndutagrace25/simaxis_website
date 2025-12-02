@@ -27,9 +27,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-white/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-      }`}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 bg-secondary-500 border-y border-primary-300/30`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16 lg:h-20">
@@ -47,7 +45,7 @@ const Header = () => {
                 height={48}
                 className="w-12 h-12 object-cover rounded-full"
               />
-              <span className="text-2xl font-bold text-primary-400 text-shadow-lg">
+              <span className="text-2xl font-bold text-white text-shadow-lg">
                 SI-MAXIS
               </span>
             </div>
@@ -62,10 +60,10 @@ const Header = () => {
                 initial={{ opacity: 0, y: -20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
-                className="text-[#424242] hover:text-primary-400 font-medium transition-colors duration-300 relative group"
+                className="text-white hover:text-primary-300 font-medium transition-colors duration-300 relative group text-shadow"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-400 transition-all duration-300 group-hover:w-full"></span>
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-primary-300 transition-all duration-300 group-hover:w-full"></span>
               </motion.a>
             ))}
           </nav>
@@ -108,7 +106,7 @@ const Header = () => {
           {/* Mobile Menu Button */}
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className="lg:hidden p-2 rounded-md text-[#424242] hover:text-primary-400 hover:bg-gray-100 transition-colors duration-300"
+            className="lg:hidden p-2 rounded-md text-white hover:text-primary-300 hover:bg-secondary-600 transition-colors duration-300"
           >
             {isMenuOpen ? (
               <X className="w-6 h-6" />
@@ -126,7 +124,7 @@ const Header = () => {
             initial={{ opacity: 0, height: 0 }}
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden bg-white border-t border-gray-200"
+            className="lg:hidden bg-secondary-500 border-t border-primary-300/30"
           >
             <div className="px-4 py-6 space-y-4">
               {navItems.map((item) => (
@@ -134,7 +132,7 @@ const Header = () => {
                   key={item.name}
                   href={item.href}
                   onClick={() => setIsMenuOpen(false)}
-                  className="block text-[#424242] hover:text-primary-400 font-medium py-2 transition-colors duration-300"
+                  className="block text-white hover:text-primary-300 font-medium py-2 transition-colors duration-300 text-shadow"
                 >
                   {item.name}
                 </a>
