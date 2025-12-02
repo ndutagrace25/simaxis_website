@@ -50,7 +50,7 @@ const Contact = () => {
           text: "Thank you for contacting SI-MAXIS. We will get back to you soon.",
           icon: "success",
           confirmButtonText: "OK",
-          confirmButtonColor: "#3b82f6",
+          confirmButtonColor: "#3fb6bf",
         });
 
         // Reset form
@@ -89,10 +89,10 @@ const Contact = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#424242] mb-6">
             Get in <span className="gradient-text">Touch</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Have questions or need support? Reach out to SI-MAXIS and our team
             will assist you promptly.
           </p>
@@ -109,7 +109,7 @@ const Contact = () => {
             onSubmit={handleSubmit}
           >
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-[#424242] font-semibold mb-2">
                 Name
               </label>
               <input
@@ -118,12 +118,12 @@ const Contact = () => {
                 value={formData.name}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition"
                 placeholder="Enter your name"
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-[#424242] font-semibold mb-2">
                 Email
               </label>
               <input
@@ -132,12 +132,12 @@ const Contact = () => {
                 value={formData.email}
                 onChange={handleInputChange}
                 required
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition"
                 placeholder="Enter your email"
               />
             </div>
             <div>
-              <label className="block text-gray-700 font-semibold mb-2">
+              <label className="block text-[#424242] font-semibold mb-2">
                 Message
               </label>
               <textarea
@@ -146,7 +146,7 @@ const Contact = () => {
                 onChange={handleInputChange}
                 required
                 rows={5}
-                className="w-full px-4 py-3 rounded-lg border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition"
                 placeholder="Enter your message"
               ></textarea>
             </div>
@@ -179,20 +179,20 @@ const Contact = () => {
           >
             <div className="mb-8 space-y-6">
               <div className="flex items-center space-x-4">
-                <Mail className="w-6 h-6 text-primary-600" />
-                <span className="text-gray-700 font-medium">
+                <Mail className="w-6 h-6 text-primary-400" />
+                <span className="text-[#424242] font-medium">
                   info@simaxis.co.ke, simaxismeter@gmail.com
                 </span>
               </div>
               <div className="flex items-center space-x-4">
-                <Phone className="w-6 h-6 text-primary-600" />
-                <span className="text-gray-700 font-medium">
+                <Phone className="w-6 h-6 text-primary-400" />
+                <span className="text-[#424242] font-medium">
                   +254722164408, +254721863405, +254732863405
                 </span>
               </div>
               <div className="flex items-center space-x-4">
-                <MapPin className="w-6 h-6 text-primary-600" />
-                <span className="text-gray-700 font-medium">
+                <MapPin className="w-6 h-6 text-primary-400" />
+                <span className="text-[#424242] font-medium">
                   Nairobi, Kenya
                 </span>
               </div>

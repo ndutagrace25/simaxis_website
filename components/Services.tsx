@@ -23,7 +23,7 @@ const Services = () => {
         "Secure transactions",
         "Multiple payment options",
       ],
-      color: "from-yellow-400 to-orange-500",
+      color: "from-primary-400 to-primary-600",
     },
     {
       icon: Droplets,
@@ -36,7 +36,7 @@ const Services = () => {
         "Usage analytics",
         "Easy installation",
       ],
-      color: "from-blue-400 to-cyan-500",
+      color: "from-primary-500 to-secondary-500",
     },
     {
       icon: Smartphone,
@@ -49,7 +49,7 @@ const Services = () => {
         "Energy efficiency",
         "User-friendly interface",
       ],
-      color: "from-green-400 to-emerald-500",
+      color: "from-secondary-500 to-primary-500",
     },
   ];
 
@@ -72,7 +72,7 @@ const Services = () => {
   ];
 
   return (
-    <section id="services" className="py-20 bg-gray-50">
+    <section id="services" className="py-20 bg-[#fefffe]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -82,10 +82,10 @@ const Services = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#424242] mb-6">
             Our <span className="gradient-text">Services</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Comprehensive solutions for all your electricity and water token
             needs. From instant token purchases to smart meter installations.
           </p>
@@ -108,10 +108,10 @@ const Services = () => {
                 <service.icon className="w-8 h-8 text-white" />
               </div>
 
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">
+              <h3 className="text-2xl font-bold text-[#424242] mb-4">
                 {service.title}
               </h3>
-              <p className="text-gray-600 mb-6 leading-relaxed">
+              <p className="text-gray-500 mb-6 leading-relaxed">
                 {service.description}
               </p>
 
@@ -119,9 +119,9 @@ const Services = () => {
                 {service.features.map((feature, featureIndex) => (
                   <li
                     key={featureIndex}
-                    className="flex items-center text-gray-700"
+                    className="flex items-center text-[#424242]"
                   >
-                    <div className="w-2 h-2 bg-primary-600 rounded-full mr-3"></div>
+                    <div className="w-2 h-2 bg-primary-400 rounded-full mr-3"></div>
                     {feature}
                   </li>
                 ))}
@@ -139,10 +139,10 @@ const Services = () => {
           className="bg-white rounded-2xl shadow-xl p-8 lg:p-12"
         >
           <div className="text-center mb-12">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+            <h3 className="text-3xl font-bold text-[#424242] mb-4">
               Why Choose <span className="gradient-text">SI-MAXIS</span>?
             </h3>
-            <p className="text-lg text-gray-600">
+            <p className="text-lg text-gray-500">
               We provide the most reliable and convenient token purchasing
               experience
             </p>
@@ -158,13 +158,13 @@ const Services = () => {
                 viewport={{ once: true }}
                 className="text-center"
               >
-                <div className="w-16 h-16 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto mb-4">
+                <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                   <benefit.icon className="w-8 h-8 text-white" />
                 </div>
-                <h4 className="text-xl font-bold text-gray-900 mb-2">
+                <h4 className="text-xl font-bold text-[#424242] mb-2">
                   {benefit.title}
                 </h4>
-                <p className="text-gray-600">{benefit.description}</p>
+                <p className="text-gray-500">{benefit.description}</p>
               </motion.div>
             ))}
           </div>

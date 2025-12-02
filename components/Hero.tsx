@@ -56,29 +56,28 @@ const Hero = () => {
               className="inline-flex items-center px-3 py-1.5 sm:px-4 sm:py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-xs sm:text-sm font-medium mb-4 sm:mb-6 mt-4 sm:mt-0"
             >
               <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-              Smart Energy Solutions
+              Smart Metering Solutions
             </motion.div>
 
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.3 }}
-              className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold text-white mb-4 sm:mb-6 leading-tight"
+              className="text-[24px] font-bold text-white mb-4 sm:mb-6 leading-tight"
             >
-              Power Your Life with{" "}
-              <span className="text-yellow-300">Smart Tokens</span>
+              Solve Kenya's Meter Shortage. Get Reliable Prepaid Meters,
+              Installed
             </motion.h1>
 
             <motion.p
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.4 }}
-              className="text-base sm:text-lg md:text-xl text-white/90 mb-6 sm:mb-8 leading-relaxed"
+              className="text-[16px] text-white/90 mb-6 sm:mb-8 leading-relaxed"
             >
-              Experience seamless electricity and water token purchases. Buy
-              tokens via paybill{" "}
-              <span className="font-bold text-yellow-300">4444400</span> and
-              receive them instantly via SMS.
+              We provide property managers and home owners with 24/7 smart
+              metering solutions, eliminating tenant debts, quarrels, and bill
+              payment delays.
             </motion.p>
 
             <motion.div
@@ -94,7 +93,7 @@ const Hero = () => {
                 Explore Services
                 <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 ml-2 group-hover:translate-x-1 transition-transform" />
               </a>
-              <button className="btn-outline border-white text-white hover:bg-white hover:text-primary-600 group text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6">
+              <button className="btn-outline border-white text-white hover:bg-white hover:text-primary-400 group text-sm sm:text-base py-2.5 sm:py-3 px-4 sm:px-6">
                 <Play className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Watch Demo
               </button>
@@ -108,15 +107,15 @@ const Hero = () => {
               className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-4"
             >
               <div className="flex items-center text-white/90 text-xs sm:text-sm">
-                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-300 flex-shrink-0" />
+                <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0" />
                 <span>Instant SMS Delivery</span>
               </div>
               <div className="flex items-center text-white/90 text-xs sm:text-sm">
-                <Shield className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-300 flex-shrink-0" />
+                <Shield className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0" />
                 <span>Secure Transactions</span>
               </div>
               <div className="flex items-center text-white/90 text-xs sm:text-sm">
-                <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-yellow-300 flex-shrink-0" />
+                <Zap className="w-4 h-4 sm:w-5 sm:h-5 mr-2 text-primary-400 flex-shrink-0" />
                 <span>24/7 Availability</span>
               </div>
             </motion.div>
@@ -141,7 +140,7 @@ const Hero = () => {
                 className="bg-white/10 backdrop-blur-md rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-white/20 shadow-2xl"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4 sm:mb-6">
                     <Zap className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                   </div>
                   <h3 className="text-xl sm:text-2xl font-bold text-white mb-4">
@@ -173,7 +172,7 @@ const Hero = () => {
                   </div>
                   <a
                     href="#contact"
-                    className="w-full mt-4 sm:mt-6 bg-yellow-400 hover:bg-yellow-500 text-gray-900 font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-300 text-center block text-sm sm:text-base"
+                    className="w-full mt-4 sm:mt-6 bg-primary-400 hover:bg-primary-500 text-white font-bold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-colors duration-300 text-center block text-sm sm:text-base"
                   >
                     Get Started
                   </a>
@@ -184,12 +183,12 @@ const Hero = () => {
               <motion.div
                 animate={{ rotate: 360 }}
                 transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-yellow-400/20 rounded-full"
+                className="absolute -top-2 -right-2 sm:-top-4 sm:-right-4 w-12 h-12 sm:w-16 sm:h-16 bg-primary-400/20 rounded-full"
               />
               <motion.div
                 animate={{ rotate: -360 }}
                 transition={{ duration: 15, repeat: Infinity, ease: "linear" }}
-                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-blue-400/20 rounded-full"
+                className="absolute -bottom-2 -left-2 sm:-bottom-4 sm:-left-4 w-10 h-10 sm:w-12 sm:h-12 bg-primary-400/20 rounded-full"
               />
             </div>
           </motion.div>

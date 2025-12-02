@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const Footer = () => {
   return (
-    <footer className="bg-gray-900 text-gray-200 py-10 mt-20">
+    <footer className="bg-secondary-500 text-[#fefffe] py-10 mt-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-8">
         {/* Logo and Copyright */}
         <div className="flex items-center space-x-3 mb-4 md:mb-0">
@@ -13,7 +13,7 @@ const Footer = () => {
             height={48}
             className="w-12 h-12 object-cover rounded-full"
           />
-          <span className="text-xl font-bold text-[#2cc0ce] text-shadow-lg">
+          <span className="text-xl font-bold text-primary-400 text-shadow-lg">
             SI-MAXIS
           </span>
         </div>
@@ -65,7 +65,7 @@ const Footer = () => {
           </a>
         </div>
       </div>
-      <div className="text-center text-gray-400 text-sm mt-8">
+      <div className="text-center text-gray-500 text-sm mt-8">
         &copy; {new Date().getFullYear()} SI-MAXIS. All rights reserved.
       </div>
     </footer>

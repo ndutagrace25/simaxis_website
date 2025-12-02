@@ -51,7 +51,7 @@ const HowItWorks = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-20 bg-white">
+    <section id="how-it-works" className="py-20 bg-[#fefffe]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <motion.div
@@ -61,10 +61,10 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-[#424242] mb-6">
             How It <span className="gradient-text">Works</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-500 max-w-3xl mx-auto">
             Get your electricity tokens in just 5 simple steps. The entire
             process takes less than 2 minutes!
           </p>
@@ -73,7 +73,7 @@ const HowItWorks = () => {
         {/* Steps */}
         <div className="relative">
           {/* Connection Line */}
-          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-200 via-primary-400 to-secondary-400 transform -translate-y-1/2 z-0"></div>
+          <div className="hidden lg:block absolute top-1/2 left-0 right-0 h-0.5 bg-gradient-to-r from-primary-300 via-primary-400 to-primary-500 transform -translate-y-1/2 z-0"></div>
 
           <div className="grid lg:grid-cols-5 gap-8 relative z-10">
             {steps.map((step, index) => (
@@ -87,21 +87,21 @@ const HowItWorks = () => {
               >
                 {/* Step Circle */}
                 <div className="relative mb-6">
-                  <div className="w-20 h-20 bg-gradient-to-r from-primary-500 to-secondary-500 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
+                  <div className="w-20 h-20 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto group-hover:scale-110 transition-transform duration-300 shadow-lg">
                     <step.icon className="w-10 h-10 text-white" />
                   </div>
                   {/* Step Number */}
-                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-accent-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
+                  <div className="absolute -top-2 -right-2 w-8 h-8 bg-secondary-500 text-white rounded-full flex items-center justify-center text-sm font-bold">
                     {index + 1}
                   </div>
                 </div>
 
                 {/* Step Content */}
                 <div className="bg-gray-50 rounded-xl p-6 h-full">
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">
+                  <h3 className="text-xl font-bold text-[#424242] mb-3">
                     {step.title}
                   </h3>
-                  <p className="text-gray-600 mb-4 font-medium">
+                  <p className="text-gray-500 mb-4 font-medium">
                     {step.description}
                   </p>
                   <p className="text-sm text-gray-500 leading-relaxed">
@@ -121,11 +121,11 @@ const HowItWorks = () => {
           viewport={{ once: true }}
           className="text-center mt-16"
         >
-          <div className="bg-gradient-to-r from-primary-50 to-secondary-50 rounded-2xl p-8 lg:p-12 border border-primary-100">
-            <h3 className="text-3xl font-bold text-gray-900 mb-4">
+          <div className="bg-gradient-to-r from-primary-50 to-primary-100 rounded-2xl p-8 lg:p-12 border border-primary-200">
+            <h3 className="text-3xl font-bold text-[#424242] mb-4">
               Ready to Get Started?
             </h3>
-            <p className="text-lg text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-lg text-gray-500 mb-8 max-w-2xl mx-auto">
               Join thousands of satisfied customers who trust SI-MAXIS for their
               electricity token needs. Start your purchase now and experience
               the convenience!
@@ -151,34 +151,34 @@ const HowItWorks = () => {
             <div className="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
               <CheckCircle className="w-6 h-6 text-green-600" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">
+            <h4 className="text-lg font-bold text-[#424242] mb-2">
               Instant Delivery
             </h4>
-            <p className="text-gray-600">
+            <p className="text-gray-500">
               Tokens delivered via SMS within seconds
             </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-gray-100">
-            <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Shield className="w-6 h-6 text-blue-600" />
+            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Shield className="w-6 h-6 text-primary-400" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">
+            <h4 className="text-lg font-bold text-[#424242] mb-2">
               100% Secure
             </h4>
-            <p className="text-gray-600">
+            <p className="text-gray-500">
               Bank-grade security for all transactions
             </p>
           </div>
 
           <div className="text-center p-6 bg-white rounded-xl shadow-lg border border-gray-100">
-            <div className="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
-              <Clock className="w-6 h-6 text-purple-600" />
+            <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mx-auto mb-4">
+              <Clock className="w-6 h-6 text-primary-400" />
             </div>
-            <h4 className="text-lg font-bold text-gray-900 mb-2">
+            <h4 className="text-lg font-bold text-[#424242] mb-2">
               24/7 Available
             </h4>
-            <p className="text-gray-600">
+            <p className="text-gray-500">
               Purchase tokens anytime, day or night
             </p>
           </div>
