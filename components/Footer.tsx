@@ -13,7 +13,7 @@ const Footer = () => {
             height={48}
             className="w-12 h-12 object-cover rounded-full"
           />
-          <span className="text-xl font-bold text-primary-400 text-shadow-lg">
+          <span className="text-2xl font-bold text-white text-shadow-lg">
             SI-MAXIS
           </span>
         </div>

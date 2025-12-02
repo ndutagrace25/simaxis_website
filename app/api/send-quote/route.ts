@@ -3,14 +3,17 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { name, email, phone, message } = body;
+    const { name, email, phone, product, quantity, location, message } = body;
 
-    // Prepare the SMS message
-    const smsMessage = `New Message From The Website:
+    // Prepare the SMS message for quote request
+    const smsMessage = `New Quote Request From The Website:
 Name: ${name}
 Phone: ${phone}
 Email: ${email}
-Message: ${message}`;
+Product: ${product || "Not specified"}
+Quantity: ${quantity || "Not specified"}
+Location: ${location || "Not specified"}
+Message: ${message || "No additional message"}`;
 
     let mobileNumbers = [
       "+254708807403",
@@ -63,12 +66,12 @@ Message: ${message}`;
     if (successCount === mobileNumbers.length) {
       return NextResponse.json({
         success: true,
-        message: `SMS sent successfully to all ${mobileNumbers.length} recipients`,
+        message: `Quote request sent successfully to all ${mobileNumbers.length} recipients`,
       });
     } else if (successCount > 0) {
       return NextResponse.json({
         success: true,
-        message: `SMS sent to ${successCount}/${
+        message: `Quote request sent to ${successCount}/${
           mobileNumbers.length
         } recipients. Errors: ${errorMessages.join(", ")}`,
       });
@@ -76,7 +79,7 @@ Message: ${message}`;
       return NextResponse.json(
         {
           success: false,
-          message: `Failed to send SMS to any recipients. Errors: ${errorMessages.join(
+          message: `Failed to send quote request to any recipients. Errors: ${errorMessages.join(
             ", "
           )}`,
         },
@@ -84,7 +87,7 @@ Message: ${message}`;
       );
     }
   } catch (error: any) {
-    console.error("Error in SMS API route:", error);
+    console.error("Error in Quote Request API route:", error);
     return NextResponse.json(
       {
         success: false,

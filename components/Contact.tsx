@@ -9,6 +9,7 @@ const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
     email: "",
+    phone: "",
     message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -37,6 +38,7 @@ const Contact = () => {
         body: JSON.stringify({
           name: formData.name,
           email: formData.email,
+          phone: formData.phone,
           message: formData.message,
         }),
       });
@@ -57,6 +59,7 @@ const Contact = () => {
         setFormData({
           name: "",
           email: "",
+          phone: "",
           message: "",
         });
       } else {
@@ -134,6 +137,20 @@ const Contact = () => {
                 required
                 className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition"
                 placeholder="Enter your email"
+              />
+            </div>
+            <div>
+              <label className="block text-[#424242] font-semibold mb-2">
+                Phone Number
+              </label>
+              <input
+                type="tel"
+                name="phone"
+                value={formData.phone}
+                onChange={handleInputChange}
+                required
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-primary-400 focus:ring-2 focus:ring-primary-100 outline-none transition"
+                placeholder="Enter your phone number"
               />
             </div>
             <div>

@@ -14,9 +14,11 @@ import {
   CreditCard,
   Heart,
 } from "lucide-react";
+import QuoteDialog from "./QuoteDialog";
 
 const Hero = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
   const images = ["/assets/meter_one.png", "/assets/meter_two.png"];
 
   useEffect(() => {
@@ -109,7 +111,10 @@ const Hero = () => {
               transition={{ delay: 0.5 }}
               className="flex flex-col sm:flex-row gap-3 sm:gap-4"
             >
-              <button className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group text-sm sm:text-base">
+              <button
+                onClick={() => setIsDialogOpen(true)}
+                className="bg-secondary-500 hover:bg-secondary-600 text-white font-semibold py-2.5 sm:py-3 px-4 sm:px-6 rounded-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl flex items-center justify-center group text-sm sm:text-base"
+              >
                 <FileText className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 <span>Get Your Meter Quote</span>
               </button>
@@ -225,6 +230,12 @@ const Hero = () => {
           />
         </motion.div>
       </motion.div>
+
+      {/* Quote Dialog */}
+      <QuoteDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+      />
     </section>
   );
 };

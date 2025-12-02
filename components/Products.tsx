@@ -1,5 +1,6 @@
 "use client";
 
+import { useState } from "react";
 import { motion } from "framer-motion";
 import {
   Zap,
@@ -10,16 +11,34 @@ import {
   Settings,
   Star,
 } from "lucide-react";
+import electricitySubMeter from "@/public/assets/meter_one.png";
+import waterMeter from "@/public/assets/meter_two.png";
+import Image from "next/image";
+import QuoteDialog from "./QuoteDialog";
 
 const Products = () => {
+  const [isDialogOpen, setIsDialogOpen] = useState(false);
+  const [selectedProduct, setSelectedProduct] = useState("");
+
+  const handleGetQuote = (productName: string) => {
+    // Map product names to API product names
+    const productMap: { [key: string]: string } = {
+      "Electricity Sub-Meters": "Electricity Token Meter",
+      "Water Sub-Meters": "Water Meter",
+      "Hybrid Token Meter": "Electricity Token Meter", // Default fallback
+    };
+    setSelectedProduct(productMap[productName] || "Electricity Token Meter");
+    setIsDialogOpen(true);
+  };
   const products = [
     {
-      name: "Smart Electricity Token Meter",
+      name: "Electricity Sub-Meters",
       category: "Electricity",
-      icon: Zap,
+      icon: electricitySubMeter,
+      isImage: true,
       price: "KES 15,000",
       description:
-        "Advanced token meter with real-time monitoring and automatic token validation.",
+        "Ideal for rentals, apartments, and shared spaces where everyone pays for their own usage only. No prices.",
       features: [
         "Real-time consumption display",
         "Automatic token validation",
@@ -39,12 +58,13 @@ const Products = () => {
       popular: true,
     },
     {
-      name: "Smart Water Meter",
-      category: "Water",
-      icon: Droplets,
+      name: "Water Sub-Meters",
+      category: "Water Meters",
+      icon: waterMeter,
+      isImage: true,
       price: "KES 12,000",
       description:
-        "High-precision water meter with leak detection and usage analytics.",
+        "Accurate tracking for homes and buildings to avoid disputes.",
       features: [
         "Leak detection system",
         "Usage analytics dashboard",
@@ -67,6 +87,7 @@ const Products = () => {
       name: "Hybrid Token Meter",
       category: "Multi-Utility",
       icon: Gauge,
+      isImage: false,
       price: "KES 18,000",
       description:
         "Combined electricity and water token meter for comprehensive utility management.",
@@ -105,9 +126,9 @@ const Products = () => {
             Our <span className="gradient-text">Products</span>
           </h2>
           <p className="text-xl text-gray-500 max-w-3xl mx-auto">
-            State-of-the-art meters and smart devices designed for modern
-            utility management. Built with reliability and user convenience in
-            mind.
+            State-of-the-art meters and smart devices are designed for modern
+            utility management and built with reliability and user convenience
+            in mind.
           </p>
         </motion.div>
 
@@ -126,19 +147,34 @@ const Products = () => {
                 {/* Popular Badge */}
                 {product.popular && (
                   <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                  <div className="bg-gradient-to-r from-primary-400 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center">
-                    <Star className="w-4 h-4 mr-1" />
-                    Most Popular
-                  </div>
+                    <div className="bg-gradient-to-r from-primary-400 to-primary-600 text-white px-4 py-2 rounded-full text-sm font-bold flex items-center">
+                      <Star className="w-4 h-4 mr-1" />
+                      Most Popular
+                    </div>
                   </div>
                 )}
 
                 {/* Product Header */}
                 <div className="text-center mb-6">
                   <div
-                    className={`w-20 h-20 bg-gradient-to-r ${product.color} rounded-xl flex items-center justify-center mx-auto mb-4`}
+                    className={`w-32 h-32 bg-gradient-to-r ${product.color} rounded-xl flex items-center justify-center mx-auto mb-4 p-4`}
                   >
-                    <product.icon className="w-10 h-10 text-white" />
+                    {product.isImage ? (
+                      <Image
+                        src={product.icon as typeof electricitySubMeter}
+                        alt={product.name}
+                        width={120}
+                        height={120}
+                        className="object-contain"
+                      />
+                    ) : (
+                      (() => {
+                        const IconComponent = product.icon as typeof Gauge;
+                        return (
+                          <IconComponent className="w-10 h-10 text-white" />
+                        );
+                      })()
+                    )}
                   </div>
                   <div className="text-sm text-primary-400 font-medium mb-2">
                     {product.category}
@@ -146,51 +182,19 @@ const Products = () => {
                   <h3 className="text-2xl font-bold text-[#424242] mb-2">
                     {product.name}
                   </h3>
-                  <div className="text-3xl font-bold text-primary-400 mb-4">
-                    {product.price}
-                  </div>
+
                   <p className="text-gray-500 leading-relaxed">
                     {product.description}
                   </p>
                 </div>
 
-                {/* Features */}
-                <div className="mb-6">
-                  <h4 className="font-bold text-[#424242] mb-3">
-                    Key Features:
-                  </h4>
-                  <ul className="space-y-2">
-                    {product.features.map((feature, featureIndex) => (
-                      <li
-                        key={featureIndex}
-                        className="flex items-center text-[#424242] text-sm"
-                      >
-                        <div className="w-2 h-2 bg-primary-400 rounded-full mr-3 flex-shrink-0"></div>
-                        {feature}
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {/* Specifications */}
-                <div className="mb-6">
-                  <h4 className="font-bold text-[#424242] mb-3">
-                    Specifications:
-                  </h4>
-                  <div className="space-y-2">
-                    {Object.entries(product.specs).map(([key, value]) => (
-                      <div key={key} className="flex justify-between text-sm">
-                        <span className="text-gray-500">{key}:</span>
-                        <span className="text-[#424242] font-medium">
-                          {value}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
                 {/* CTA Button */}
-                <button className="w-full btn-primary">Get Quote</button>
+                <button
+                  onClick={() => handleGetQuote(product.name)}
+                  className="w-full btn-secondary text-white"
+                >
+                  Get Quote
+                </button>
               </div>
             </motion.div>
           ))}
@@ -243,7 +247,9 @@ const Products = () => {
               <div className="w-16 h-16 bg-gradient-to-r from-primary-400 to-primary-600 rounded-full flex items-center justify-center mx-auto mb-4">
                 <Battery className="w-8 h-8 text-white" />
               </div>
-              <h4 className="text-lg font-bold text-[#424242] mb-2">Warranty</h4>
+              <h4 className="text-lg font-bold text-[#424242] mb-2">
+                Warranty
+              </h4>
               <p className="text-gray-500">2-year warranty on all products</p>
             </div>
 
@@ -259,6 +265,13 @@ const Products = () => {
           </div>
         </motion.div>
       </div>
+
+      {/* Quote Dialog */}
+      <QuoteDialog
+        isOpen={isDialogOpen}
+        onClose={() => setIsDialogOpen(false)}
+        defaultProduct={selectedProduct}
+      />
     </section>
   );
 };
